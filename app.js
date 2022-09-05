@@ -44,7 +44,7 @@ filterInput.addEventListener('keyup', (e) => {
       displayCoins(dataResponse.data.coins)
     } catch (error) {
       console.log(error)
-      console.log()
+      console.log(proxyUrl)
     }
   }
 
