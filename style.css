@@ -1,6 +1,6 @@
-h2{
+/* h2{
     color: red;
-}
+} */
 
 
 /* @media only screen and (max-width: 350px) {
@@ -8,3 +8,5 @@ h2{
         display: none;
     }
   } */
+
+  table { min-width: 500px; }
