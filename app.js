@@ -6,7 +6,7 @@ const filterInput = document.getElementById("filter");
 $(document).ready(function(){
   if(window.matchMedia("(max-width: 454px)").matches){
       // The viewport is less than 768 pixels wide
-      alert("Sorry there is no mobile version available. This website is best suited for larger displays such as Tablet or Desktop.");
+      alert("Sorry this website is best suited for larger displays please use Landscape mode on mobile devices");
   } 
 });
 
