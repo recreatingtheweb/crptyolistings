@@ -1,5 +1,5 @@
 var apiKey = "coinrankingef782bb78d6e6f94f8bbcfd8d6cfd581c5e3cdad46dbc2f7";
-var proxyUrl = "http://localhost:3002/coins";
+var proxyUrl = "https://localhost:3002/coins";
 const coinList = document.getElementById("data");
 const filterInput = document.getElementById("filter");
 
