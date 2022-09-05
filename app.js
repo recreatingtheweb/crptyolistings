@@ -35,7 +35,7 @@ filterInput.addEventListener('keyup', (e) => {
 
  const loadCoins = async () => {
     try {
-      const res = await fetch("/getAll")
+      const res = await fetch(proxyUrl)
       const dataResponse = await res.json()
       coinsData = dataResponse.data.coins
       console.log(dataResponse)
@@ -45,6 +45,7 @@ filterInput.addEventListener('keyup', (e) => {
     } catch (error) {
       console.log(error)
       console.log(proxyUrl)
+      alert(error)
     }
   }
 
