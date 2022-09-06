@@ -1,12 +1,12 @@
-// const express = require('express');
-// const cors = require('cors')
-// const morgan = require('morgan')
-// const fetch = require('node-fetch')
+
 
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import fetch from 'node-fetch';
+import https from 'https';
+import * as fs from 'fs';
+
 
 
 const app = express()
@@ -14,6 +14,10 @@ app.use(cors())
 app.use(morgan("coins"))
 const port = 3002
 
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
 
 var apiKey = "coinrankingef782bb78d6e6f94f8bbcfd8d6cfd581c5e3cdad46dbc2f7";
 
@@ -51,6 +55,13 @@ app.get("/coins", (req, res) => {
   })()
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
+// Creating https server by passing
+// options and app object
+https.createServer(options, app)
+.listen(3002, function (req, res) {
+  console.log("Server started at port 3000");
+});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })

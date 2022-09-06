@@ -3,15 +3,38 @@ var proxyUrl = "http://localhost:3002/coins";
 const coinList = document.getElementById("data");
 const filterInput = document.getElementById("filter");
 
-$(document).ready(function(){
-  if(window.matchMedia("(max-width: 454px)").matches){
-      // The viewport is less than 768 pixels wide
-      alert("Sorry this website is best suited for larger displays please use Landscape mode on mobile devices");
-  } 
-});
+// $(document).ready(function(){
+//   if(window.matchMedia("(max-width: 454px)").matches){
+//       // The viewport is less than 768 pixels wide
+//       alert("Sorry this website is best suited for larger displays please use Landscape mode on mobile devices");
+//   } 
+// });
+function fnBrowserDetect(){
+                 
+  let userAgent = navigator.userAgent;
+  let browserName;
+  
+  if(userAgent.match(/chrome|chromium|crios/i)){
+      browserName = "chrome";
+    }else if(userAgent.match(/firefox|fxios/i)){
+      browserName = "firefox";
+    }  else if(userAgent.match(/safari/i)){
+      browserName = "safari";
+    }else if(userAgent.match(/opr\//i)){
+      browserName = "opera";
+    } else if(userAgent.match(/edg/i)){
+      browserName = "edge";
+    }else{
+      browserName="No browser detection";
+    }
 
+    if(browserName = "safari"){
+      alert("Safari is currently not supported for this web app. Support will be coming soon.")
+    }
+  
+}
 
-
+fnBrowserDetect();
 
 
   let coinsData = []
