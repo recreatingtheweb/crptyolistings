@@ -64,7 +64,7 @@ filterInput.addEventListener('keyup', (e) => {
       const dataResponse = await res.json()
       coinsData = dataResponse.data.coins
       console.log(dataResponse)
-      console.log(res.status)
+      // console.log(res.status)
 
       displayCoins(dataResponse.data.coins)
     } catch (error) {
