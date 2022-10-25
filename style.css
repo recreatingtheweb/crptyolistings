@@ -1,12 +1,7 @@
-/* h2{
-    color: red;
-} */
-
-
-/* @media only screen and (max-width: 350px) {
-    #content{
-        display: none;
-    }
-  } */
-
-  table { min-width: 500px; }
+.heading{
+    color: white;
+    margin: 15px;
+}
+.table-responsive {
+    margin-left: 5px;
+}

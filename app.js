@@ -3,18 +3,12 @@ var proxyUrl = "http://localhost:3002/coins";
 const coinList = document.getElementById("data");
 const filterInput = document.getElementById("filter");
 
-// $(document).ready(function(){
-//   if(window.matchMedia("(max-width: 454px)").matches){
-//       // The viewport is less than 768 pixels wide
-//       alert("Sorry this website is best suited for larger displays please use Landscape mode on mobile devices");
-//   } 
-// });
+
 function fnBrowserDetect(){         
-      alert("Safari is currently not supported for this web app. Support will be coming soon.")
+      alert("This app is currently still in development. Safari is currently not supported for this web app. Support will be coming soon.")
     
 }
 
-fnBrowserDetect();
 
 
   let coinsData = []
@@ -35,7 +29,7 @@ filterInput.addEventListener('keyup', (e) => {
   })
 
 
-
+// Load coins from the API endpoint
  const loadCoins = async () => {
     try {
       const res = await fetch(proxyUrl,{
@@ -50,11 +44,10 @@ filterInput.addEventListener('keyup', (e) => {
     } catch (error) {
       console.log(error)
       console.log(proxyUrl)
-      // alert(error)
     }
   }
 
-
+// Insert the coin data into the table
   const displayCoins = (coins) => {
     const htmlString = coins.map((coin) => {
       return `
@@ -72,4 +65,12 @@ filterInput.addEventListener('keyup', (e) => {
       .join('');
     coinList.innerHTML = htmlString
      }
-  loadCoins()
+
+  try{
+    loadCoins()
+  } 
+  catch(error){
+    console.log(error)
+    //Throw an alrt if the user is using unsopported browser.
+    fnBrowserDetect()
+  }
